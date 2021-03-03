@@ -1,4 +1,5 @@
 <?php
+
 function get_classes(){
     global $db;
     $query = 'SELECT * FROM classes ORDER BY classID';

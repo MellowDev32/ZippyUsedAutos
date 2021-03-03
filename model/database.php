@@ -7,7 +7,7 @@ $password = 'pa55word';
 try{
     $db = new PDO($dsn, $username, $password);
 } catch (PDOException $e){
-    $error_message = $e->getMessage();
+    $error = $e->getMessage();
     include('../view/error.php');
     exit();
 }
