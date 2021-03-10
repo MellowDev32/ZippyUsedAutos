@@ -18,7 +18,11 @@ function get_class_name($class_id){
     $statement->execute();
     $class = $statement->fetch();
     $statement->closeCursor();
-    $class_name= $class['className'];
+    if($class){
+        $class_name= $class['className'];
+    } else {
+        $class_name = 'NULL';
+    }
     return $class_name;
 }
 

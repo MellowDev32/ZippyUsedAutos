@@ -17,7 +17,11 @@ function get_type_name($type_id){
     $statement->execute();
     $type = $statement->fetch();
     $statement->closeCursor();
-    $type_name= $type['typeName'];
+    if($type){
+        $type_name= $type['typeName'];
+    } else {
+        $type_name = 'NULL';
+    }
     return $type_name;
 }
 

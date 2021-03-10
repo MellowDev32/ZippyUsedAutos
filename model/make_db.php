@@ -17,7 +17,11 @@ function get_make_name($make_id){
     $statement->execute();
     $make = $statement->fetch();
     $statement->closeCursor();
-    $make_name= $make['makeName'];
+    if($make){
+        $make_name= $make['makeName'];
+    } else {
+        $make_name = 'NULL';
+    }
     return $make_name;
 }
 

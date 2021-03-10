@@ -1,7 +1,7 @@
 <?php
 
 $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
-$username = 'msg_user';
+$username = 'mgs_user';
 $password = 'pa55word';
 
 try{

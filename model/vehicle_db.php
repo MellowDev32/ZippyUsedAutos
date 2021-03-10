@@ -2,22 +2,22 @@
 function get_vehicles($make_id, $type_id, $class_id){
     global $db;
     if(!$make_id && !$type_id && !$class_id){
-        $query = 'SELECT * FROM vehicles ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles ORDER BY price DESC';
     } else if (!$make_id && $type_id && $class_id){
-        $query = 'SELECT * FROM vehicles WHERE (vehicles.typeID = :type_id AND vehicles.classID = :class_id) ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE (vehicles.typeID = :type_id AND vehicles.classID = :class_id) ORDER BY price DESC';
     } else if ($make_id && !$type_id && $class_id){
-        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.classID = :class_id) ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.classID = :class_id) ORDER BY price DESC';
     } else if ($make_id && $type_id && !$class_id){
-        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.typeID = :type_id) ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.typeID = :type_id) ORDER BY price DESC';
     }
     else if ($make_id && !$type_id && !$class_id){
-        $query = 'SELECT * FROM vehicles WHERE vehicles.makeID = :make_id ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE vehicles.makeID = :make_id ORDER BY price DESC';
     }else if (!$make_id && $type_id && !$class_id){
-        $query = 'SELECT * FROM vehicles WHERE vehicles.typeID = :type_id ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE vehicles.typeID = :type_id ORDER BY price DESC';
     }else if (!$make_id && !$type_id && $class_id){
-        $query = 'SELECT * FROM vehicles WHERE vehicles.classID = :class_id ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE vehicles.classID = :class_id ORDER BY price DESC';
     } else {
-        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.typeID = :type_id AND vehicles.classID = :class_id) ORDER BY vehicleID';
+        $query = 'SELECT * FROM vehicles WHERE (vehicles.makeID = :make_id AND vehicles.typeID = :type_id AND vehicles.classID = :class_id) ORDER BY price DESC';
     }
     $statement = $db->prepare($query);
     if($make_id){
