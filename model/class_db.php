@@ -28,7 +28,7 @@ function get_class_name($class_id){
 
 function delete_class($class_id){
     global $db;
-    $query = 'DELETE * FROM classes WHERE classId = :class_id';
+    $query = 'DELETE FROM classes WHERE classId = :class_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':class_id', $class_id);
     $statement->execute();

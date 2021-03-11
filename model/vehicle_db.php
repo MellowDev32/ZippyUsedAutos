@@ -68,7 +68,7 @@ function get_query_price($make_id, $type_id, $class_id){
 
 function delete_vehicle($vehicle_id){
     global $db;
-    $query = 'DELETE * FROM vehicles WHERE vehicleId = :vehicle_id';
+    $query = 'DELETE FROM vehicles WHERE vehicleID = :vehicle_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':vehicle_id', $vehicle_id);
     $statement->execute();

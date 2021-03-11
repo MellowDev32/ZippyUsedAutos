@@ -27,7 +27,7 @@ function get_make_name($make_id){
 
 function delete_make($make_id){
     global $db;
-    $query = 'DELETE * FROM makes WHERE makeId = :make_id';
+    $query = 'DELETE FROM makes WHERE makeId = :make_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':make_id', $make_id);
     $statement->execute();

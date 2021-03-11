@@ -27,7 +27,7 @@ function get_type_name($type_id){
 
 function delete_type($type_id){
     global $db;
-    $query = 'DELETE * FROM types WHERE typeId = :type_id';
+    $query = 'DELETE FROM types WHERE typeId = :type_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':type_id', $type_id);
     $statement->execute();
