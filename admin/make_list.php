@@ -1,36 +1,29 @@
 <?php include('../view/header.php') ?>
-
+<section class="container">
 <?php if($makes) { ?>
-<secion>
-    <header>
-        <h1>Make List</h1>
-    </header>
-    <br>
-    <table>
-    <?php foreach ($makes as $make) : ?>
-        <tr>
-            <td>
-                <?= $make['makeName']; ?>
-            </td>
-            <td>
-                <form action="." method="post">
-                    <input type="hidden" name="action" value="delete_make">
-                    <input type="hidden" name="make_id" value="<?= $make['makeID'] ?>">
-                    <button class="remove-button">Delete</button>
-                </form>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-</secion>
-<?php } else { ?>
-<p>No Makes exist yet.</p>
-<?php } ?>
+    <h1 class="list-title">Make List</h1>
+    <section class="mtc-table">
+        <table>
+        <?php foreach ($makes as $make) : ?>
+            <tr>
+                <td>
+                    <?= $make['makeName']; ?>
+                </td>
+                <td>
+                    <form action="." method="post">
+                        <input type="hidden" name="action" value="delete_make">
+                        <input type="hidden" name="make_id" value="<?= $make['makeID'] ?>">
+                        <button class="remove-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
+    <?php } else { ?>
+    <p>No Makes exist yet.</p>
+    <?php } ?>
+    </section>
 
-
-<section>
-    <br>
-    <br>
     <h2>Add Make</h2>
     <form action="." method="post">
         <input type="hidden" name="action" value="add_make">
@@ -43,9 +36,8 @@
             <button>Add</button>
         </div>
     </form>
-    <br>
-    <br>
-    <p><a href=".">View/Add Vehicles</a></p>
+    <section class="transfer-pages">
+        <p><a href=".">View/Add Vehicles</a></p>
+    </section>
 </section>
-
 <?php include('../view/footer.php') ?>

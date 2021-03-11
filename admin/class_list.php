@@ -1,36 +1,30 @@
 <?php include('../view/header.php') ?>
 
+<section class="container">
 <?php if($classes) { ?>
-<secion>
-    <header>
-        <h1>Class List</h1>
-    </header>
-    <br>
-    <table>
-    <?php foreach ($classes as $class) : ?>
-        <tr>
-            <td>
-                <?= $class['className']; ?>
-            </td>
-            <td>
-                <form action="." method="post">
-                    <input type="hidden" name="action" value="delete_class">
-                    <input type="hidden" name="class_id" value="<?= $class['classID'] ?>">
-                    <button class="remove-button">Delete</button>
-                </form>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-</secion>
-<?php } else { ?>
-<p>No Classes exist yet.</p>
-<?php } ?>
+    <h1 class="list-title">Class List</h1>
+    <section class="mtc-table">
+        <table>
+        <?php foreach ($classes as $class) : ?>
+            <tr>
+                <td>
+                    <?= $class['className']; ?>
+                </td>
+                <td>
+                    <form action="." method="post">
+                        <input type="hidden" name="action" value="delete_class">
+                        <input type="hidden" name="type_id" value="<?= $class['classID'] ?>">
+                        <button class="remove-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
+    <?php } else { ?>
+    <p>No Classes exist yet.</p>
+    <?php } ?>
+    </section>
 
-
-<section>
-    <br>
-    <br>
     <h2>Add Class</h2>
     <form action="." method="post">
         <input type="hidden" name="action" value="add_class">
@@ -43,9 +37,10 @@
             <button>Add</button>
         </div>
     </form>
-    <br>
-    <br>
-    <p><a href=".">View/Add Vehicles</a></p>
+    <section class="transfer-pages">
+        <p><a href=".">View/Add Vehicles</a></p>
+    </section>
 </section>
+
 
 <?php include('../view/footer.php') ?>

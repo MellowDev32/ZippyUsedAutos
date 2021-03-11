@@ -1,11 +1,11 @@
 <?php include('../view/header.php'); ?>
 
 <!-- $year, $model, $price, $type_id, $class_id, $make_id -->
-<section>
-    <h1>Add Vehicle</h1>
+<section class="container">
+    <h1 class="list-title">Add Vehicle</h1>
     <form action="." method="post">
         <input type="hidden" name="action" value="add_vehicle">
-        <table id="add-table">
+        <table class="add-table">
             <tr>
                 <td>
                     <label>Year:</label>
@@ -81,8 +81,9 @@
             <button>Add</button>
         </div>
     </form>
-    
-    <p><a href=".">View Vehicles</a></p>
+    <section class="transfer-pages">
+        <p><a href=".">View Vehicles</a></p>
+    </section>
 </section>
 
 <?php include('../view/footer.php'); ?>

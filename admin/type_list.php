@@ -1,36 +1,30 @@
 <?php include('../view/header.php') ?>
 
+<section class="container">
 <?php if($types) { ?>
-<secion>
-    <header>
-        <h1>Type List</h1>
-    </header>
-    <br>
-    <table>
-    <?php foreach ($types as $type) : ?>
-        <tr>
-            <td>
-                <?= $type['typeName']; ?>
-            </td>
-            <td>
-                <form action="." method="post">
-                    <input type="hidden" name="action" value="delete_type">
-                    <input type="hidden" name="type_id" value="<?= $type['typeID'] ?>">
-                    <button class="remove-button">Delete</button>
-                </form>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-</secion>
-<?php } else { ?>
-<p>No Types exist yet.</p>
-<?php } ?>
+    <h1 class="list-title">Type List</h1>
+    <section class="mtc-table">
+        <table>
+        <?php foreach ($types as $type) : ?>
+            <tr>
+                <td>
+                    <?= $type['typeName']; ?>
+                </td>
+                <td>
+                    <form action="." method="post">
+                        <input type="hidden" name="action" value="delete_type">
+                        <input type="hidden" name="type_id" value="<?= $type['typeID'] ?>">
+                        <button class="remove-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
+    <?php } else { ?>
+    <p>No Types exist yet.</p>
+    <?php } ?>
+    </section>
 
-
-<section>
-    <br>
-    <br>
     <h2>Add Type</h2>
     <form action="." method="post">
         <input type="hidden" name="action" value="add_type">
@@ -43,9 +37,9 @@
             <button>Add</button>
         </div>
     </form>
-    <br>
-    <br>
-    <p><a href=".">View/Add Vehicles</a></p>
+    <section class="transfer-pages">
+        <p><a href=".">View/Add Vehicles</a></p>
+    </section>
 </section>
 
 <?php include('../view/footer.php') ?>
