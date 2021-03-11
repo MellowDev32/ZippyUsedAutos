@@ -26,6 +26,10 @@ $type_id = filter_input(INPUT_POST, 'type_id', FILTER_VALIDATE_INT);
 if(!$type_id){
     $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
 }
+$order = filter_input(INPUT_POST, 'order', FILTER_VALIDATE_INT);
+if(!$order){
+    $order = filter_input(INPUT_GET, 'order', FILTER_VALIDATE_INT);
+}
 
 $action = filter_input(INPUT_POST, 'action');
 if(!$action){
@@ -43,6 +47,6 @@ switch($action) {
         $classes = get_classes();
         $makes = get_makes();
         $types = get_types();
-        $vehicles = get_vehicles($make_id, $type_id, $class_id);
+        $vehicles = get_vehicles($make_id, $type_id, $class_id, $order);
         include('../view/vehicle_list.php');
 }
