@@ -1,4 +1,4 @@
-<?php include('../view/header.php'); ?>
+<?php include('../admin/header.php'); ?>
 
 <h1 class="list-title">Zippy Used Autos</h1>
 <section class="container">
@@ -139,4 +139,4 @@
         <p><a href=".?action=list_classes">View/Edit Classes</a></p>
     </section>
 </section>
-<?php include('../view/footer.php'); ?>
+<?php include('../admin/footer.php'); ?>

@@ -1,9 +1,9 @@
 <?php
-require('../model/database.php');
-require('../model/class_db.php');
-require('../model/make_db.php');
-require('../model/type_db.php');
-require('../model/vehicle_db.php');
+require('./model/database.php');
+require('./model/class_db.php');
+require('./model/make_db.php');
+require('./model/type_db.php');
+require('./model/vehicle_db.php');
 
 $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
 $year = filter_input(INPUT_POST, 'year', FILTER_SANITIZE_STRING);
@@ -48,5 +48,5 @@ switch($action) {
         $makes = get_makes();
         $types = get_types();
         $vehicles = get_vehicles($make_id, $type_id, $class_id, $order);
-        include('../view/vehicle_list.php');
+        include('./view/vehicle_list.php');
 }

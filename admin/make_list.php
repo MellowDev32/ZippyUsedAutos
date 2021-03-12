@@ -1,4 +1,4 @@
-<?php include('../view/header.php') ?>
+<?php include('../admin/header.php') ?>
 <section class="container">
 <?php if($makes) { ?>
     <h1 class="list-title">Make List</h1>
@@ -40,4 +40,4 @@
         <p><a href=".">View/Add Vehicles</a></p>
     </section>
 </section>
-<?php include('../view/footer.php') ?>
+<?php include('../admin/footer.php') ?>

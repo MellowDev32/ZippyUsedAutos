@@ -1,4 +1,4 @@
-<?php include('../view/header.php') ?>
+<?php include('../admin/header.php') ?>
 
 <section class="container">
 <?php if($classes) { ?>
@@ -43,4 +43,4 @@
 </section>
 
 
-<?php include('../view/footer.php') ?>
+<?php include('../admin/footer.php') ?>

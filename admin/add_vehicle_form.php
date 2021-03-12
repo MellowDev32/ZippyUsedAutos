@@ -1,4 +1,4 @@
-<?php include('../view/header.php'); ?>
+<?php include('../admin/header.php'); ?>
 
 <!-- $year, $model, $price, $type_id, $class_id, $make_id -->
 <section class="container">
@@ -86,4 +86,4 @@
     </section>
 </section>
 
-<?php include('../view/footer.php'); ?>
+<?php include('../admin/footer.php'); ?>
