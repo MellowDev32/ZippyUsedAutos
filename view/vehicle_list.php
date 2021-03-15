@@ -1,4 +1,4 @@
-<?php include('./view/header.php'); ?>
+<?php include('../view/header.php'); ?>
 
 
 <h1 class="list-title">Zippy Used Autos</h1>
@@ -130,4 +130,4 @@
     
 </section>
 
-<?php include('./view/footer.php'); ?>
+<?php include('../view/footer.php'); ?>
